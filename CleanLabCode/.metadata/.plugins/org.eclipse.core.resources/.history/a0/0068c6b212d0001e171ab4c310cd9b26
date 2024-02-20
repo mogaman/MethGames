@@ -1,0 +1,27 @@
+package com.mygdx.game.InputOutput;
+
+import java.util.List;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.Entity.*;
+
+
+public class InputOutput {
+	SpriteBatch batch;
+	EntityManager em;
+	
+	public InputOutput() {
+		em = EntityManager.getInstance();
+		batch = new SpriteBatch();
+	}
+	
+	public void OutputTexture() {
+		List<Entity> el = em.getList();
+		batch.begin();
+		for(Entity e : el) {
+			batch.draw(e.getTex(), e.getX(), e.getY(), e.getTex().getWidth(), e.getTex.getHeight());
+
+		}
+	}
+
+}

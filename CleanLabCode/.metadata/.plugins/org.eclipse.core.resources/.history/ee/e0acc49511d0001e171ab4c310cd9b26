@@ -1,0 +1,11 @@
+package com.mygdx.game.InputOutput;
+
+public class InputOutput {
+	SpriteBatch batch;
+	EntityManager em;
+	
+	public void DrawOutput() {
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.mygdx.game.Screen;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SceneManager {
+	private List<Scene> sceneList;
+	private static SceneManager instance;
+	
+	public SceneManager() {
+		sceneList = new ArrayList<>();
+	}
+	
+	public static SceneManager getInstance() {
+		if(instance == null) {
+			instance = new SceneManager();
+		}
+		return instance;
+	}
+	
+	public void addScene(Scene scene) {
+		sceneList.add(scene);
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.mygdx.game;
+
+import com.mygdx.game.Entity.EntityManager;
+import com.mygdx.game.InputOutput.IOManager;
+import com.mygdx.game.Screen.SceneManager;
+
+public class GameInit {
+	EntityManager em;
+	IOManager iom;
+	SceneManager sm;
+	
+	public GameInit() {
+		em = EntityManager.getInstance();
+		iom = IOManager.getInstance();
+		sm = SceneManager.getInstance();
+		
+	}
+	
+	
+	
+
+}

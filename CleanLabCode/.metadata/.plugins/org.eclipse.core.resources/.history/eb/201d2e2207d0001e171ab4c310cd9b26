@@ -1,0 +1,7 @@
+package snippet;
+
+public class Snippet {
+	Skin skin = new Skin(Gdx.files.internal("uiskin.json")); // Ensure you have a skin
+	
+}
+

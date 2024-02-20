@@ -1,0 +1,20 @@
+package com.mygdx.game.InputOutput;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.Entity.EntityManager;
+
+public class InputOutput {
+	SpriteBatch batch;
+	EntityManager em;
+	
+	public InputOutput() {
+		em = EntityManager.getInstance();
+		batch = new SpriteBatch();
+	}
+	
+	public void OutputEntities() {
+		batch.begin();
+		
+	}
+
+}

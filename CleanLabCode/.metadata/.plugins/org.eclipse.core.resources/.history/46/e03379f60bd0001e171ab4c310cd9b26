@@ -1,0 +1,13 @@
+package com.mygdx.game.Screen;
+
+import java.util.List;
+
+public class SceneManager {
+	private List<Scene> sceneList;
+	private static SceneManager instance;
+	
+	public SceneManager() {
+		sceneList = new ArrayList<>();
+	}
+
+}

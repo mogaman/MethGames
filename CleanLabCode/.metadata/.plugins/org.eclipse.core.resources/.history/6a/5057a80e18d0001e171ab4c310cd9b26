@@ -1,0 +1,27 @@
+package com.mygdx.game;
+
+import com.badlogic.gdx.Game;
+import com.mygdx.game.Entity.*;
+import com.mygdx.game.InputOutput.*;
+import com.mygdx.game.Screen.*;
+
+public class GameInit {
+	EntityManager em;
+	IOManager iom;
+	SceneManager sm;
+	
+	public GameInit() {
+		em = EntityManager.getInstance();
+		iom = IOManager.getInstance();
+		sm = SceneManager.getInstance();
+		
+	}
+	
+	public void initScene(Game game) {
+		sm.addScene(new TitleScene(game), "Title");
+		sm.addScene(new GameScene(game), "Game");
+	}
+	
+	
+
+}

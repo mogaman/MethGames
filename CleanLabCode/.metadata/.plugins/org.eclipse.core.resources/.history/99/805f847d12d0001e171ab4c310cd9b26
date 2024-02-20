@@ -1,0 +1,101 @@
+package com.mygdx.game.Entity;
+
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.iMovable;
+
+
+public abstract class Entity implements iMovable{
+	private Texture tex;
+	private float x, y;
+	private float speed;
+	private Color Colour;
+	private boolean aiControlled;
+	
+	public Entity (String t, float x, float y, Color colour, float speed, boolean AI) {
+		tex = new Texture (Gdx.files.internal(t));
+		this.x =x;
+		this.y =y;
+		this.Colour = colour;
+		this.speed = speed;
+		this.aiControlled = AI;
+	}
+	
+
+	public float getX() 
+	{
+		return x;
+	}
+
+	public void setX(float x) 
+	{
+		this.x = x;
+	}
+
+
+	public float getY() 
+	{
+		return y; 	
+	}
+
+	public void setY(float y) 
+	{
+		this.y = y;
+	}
+
+
+	public float getSpeed() 
+	{
+		return speed;
+	}
+
+
+	public void setSpeed(float speed) 
+	{
+		this.speed = speed;
+	}
+	
+	
+	public Color getColour() 
+	{
+		return Colour;
+	}
+
+	public void setColour(Color colour) 
+	{
+		Colour = colour;
+	}
+	
+	
+	public boolean getAIControlled()
+	{
+		return aiControlled;
+	}
+	
+	public void setAIControlled(boolean bool)
+	{
+		aiControlled = bool;
+	}
+	
+	
+	public Texture getTex() {
+		return tex;
+	}
+	
+	public void setTex(Texture tex) {
+		this.tex = tex;
+	}
+	
+	public abstract void create();
+	
+	public abstract void draw();
+	
+	public abstract void update();
+	
+	public abstract void movement();
+	
+	public abstract void dispose();
+}
+
