@@ -1,0 +1,43 @@
+package com.mygdx.game.PlayerControl;
+
+import java.util.List;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.mygdx.game.Entity.Entity;
+import com.mygdx.game.Entity.EntityManager;
+
+public class PlayerControlManager {
+	private EntityManager em;
+	private static PlayerControlManager instance;
+	private List<IPlayerControl> pcList;
+	
+	public PlayerControlManager() {
+		
+		
+//		em = EntityManager.getInstance();
+//		List<Entity> el = em.getList();
+//		for(Entity e: el) {
+//			if(e.getAIControlled() == false) {
+//				if (Gdx.input.isKeyPressed(Keys.LEFT)) 
+//				{
+//					float new_pos =  e.getX() - 300 * Gdx.graphics.getDeltaTime();
+//					e.setX(new_pos);
+//				}
+//				if (Gdx.input.isKeyPressed(Keys.RIGHT)) 
+//				{
+//					float new_pos =  e.getX() + 300 * Gdx.graphics.getDeltaTime();
+//					e.setX(new_pos);
+//				}
+//			}
+//		}
+	}
+	
+	public static PlayerControlManager getInstance() {
+		if(instance == null) {
+			instance = new PlayerControlManager();
+		}
+		return instance;
+	}
+
+}
