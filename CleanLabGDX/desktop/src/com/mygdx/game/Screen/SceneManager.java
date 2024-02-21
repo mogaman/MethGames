@@ -1,0 +1,44 @@
+package com.mygdx.game.Screen;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.badlogic.gdx.Game;
+
+public class SceneManager {
+	private Map<String, Scene> sceneList;
+//	private List<Scene> sceneList;
+	private static SceneManager instance;
+	
+	public SceneManager() {
+		sceneList = new HashMap<String, Scene>();
+//		sceneList = new ArrayList<>();
+	}
+	
+	public static SceneManager getInstance() {
+		if(instance == null) {
+			instance = new SceneManager();
+		}
+		return instance;
+	}
+	
+	public void addScene(Scene scene, String name) {
+		sceneList.put(name, scene);
+//		sceneList.add(scene);
+	}
+	
+	public void dispose() {
+		for(Scene s: sceneList.values()) {
+			s.dispose();
+		}
+		sceneList.clear();
+	}
+	
+	public void loadScene(Game game, String name) {
+		Scene scene = sceneList.get(name);
+		game.setScreen(scene);
+	}
+
+}
