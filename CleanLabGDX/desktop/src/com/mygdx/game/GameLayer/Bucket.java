@@ -17,20 +17,30 @@ public class Bucket extends TextureObject implements IPlayerControl, ICollision{
 	private IOManager iom;
 	private Rectangle boundary;
 	private Map<String, Integer> keyMap;
+	private int count;
 
 	
 	
 	public Bucket(String t, float x, float y, float speed) {
 		super(t, x, y, speed);
+		count = 0;
 		iom = IOManager.getInstance();
 		boundary = new Rectangle(getX(), getY(), getTex().getWidth(), getTex().getHeight());
+	}
+	
+	public int resetCount() {
+		count = 0;
+		return count;
+	}
+	
+	public int getCount() {
+		return count;
 	}
 
 
 	@Override
 	public void PlayerMovement() {
 		keyMap = iom.getKeyMap();
-		System.out.println(keyMap.get("Left"));
 		if (Gdx.input.isKeyPressed(keyMap.get("Left"))) 
 		{
 			float new_pos =  getX() - 300 * Gdx.graphics.getDeltaTime();
@@ -47,13 +57,18 @@ public class Bucket extends TextureObject implements IPlayerControl, ICollision{
 
 	@Override
 	public Rectangle getBoundary() {
+		boundary.setPosition(getX(), getY());
 		return boundary;
 	}
 
 
 	@Override
 	public void collide(ICollision collisionEntity) {
-		
+		if(collisionEntity instanceof Drop) {
+			count++;
+			System.out.println("Collisions: " + count);
+		}
+
 	}
 
 }

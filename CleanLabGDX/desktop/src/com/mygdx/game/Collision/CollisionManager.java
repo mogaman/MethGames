@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mygdx.game.GameLayer.*;
-import com.mygdx.game.PlayerControl.IPlayerControl;
 
 public class CollisionManager {
 	
 	private List<ICollision> collidables;
 	private static CollisionManager instance;
-//	private ICollision itemA;
-//	private ICollision itemB;
 
     public CollisionManager() {
         collidables = new ArrayList<>();
@@ -22,22 +19,16 @@ public class CollisionManager {
     }
 
     public void checkCollisions() {
-    	//System.out.println("Collidable Size:" + collidables.size());
-    	ICollision itemA = null;
-        for (int i = 0; i < collidables.size(); i++) {
-        	if(collidables.get(i) instanceof Bucket) {
-        		itemA = collidables.get(i);
-        	}
-                
-            for (int j = i + 1; j < collidables.size(); j++) {
-            	if(collidables.get(j) instanceof Drop) {
-            		ICollision itemB = collidables.get(j);
-	                if (itemA.getBoundary().overlaps(itemB.getBoundary())) {
-	                    itemB.collide(itemA);
-	                }
-            	}
+    	for (ICollision itemA : collidables) {
+            if (itemA instanceof Bucket) {
+                for (ICollision itemB : collidables) {
+                    if (itemB instanceof Drop && itemA.getBoundary().overlaps(itemB.getBoundary())) {
+                        // Handle collision
+                    	itemA.collide(itemB);
+                        itemB.collide(itemA);
+                    }
+                }
             }
-            
         }
     }
     
@@ -48,5 +39,6 @@ public class CollisionManager {
     	}
     	return instance;
     }
+
 }
 

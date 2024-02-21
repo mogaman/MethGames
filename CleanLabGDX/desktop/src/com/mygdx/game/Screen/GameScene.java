@@ -71,7 +71,6 @@ public class GameScene extends Scene{
 	@Override
 	public void dispose() {
 		em.dispose();
-		
 	}
 
 }

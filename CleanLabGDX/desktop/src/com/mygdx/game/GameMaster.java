@@ -27,20 +27,13 @@ public class GameMaster extends Game {
 	SceneManager sceneManager;
 	GameInit init;
 	
-	public void create(){
-		
-//		entityManager = EntityManager.getInstance();
-//		ioManager = IOManager.getInstance();
-//		sceneManager = SceneManager.getInstance();
-		
-		
+	public void create(){		
 		init = GameInit.getInstance();
 		init.initEM();
 		init.initScene(this);
 		
-//		sceneManager.loadScene(this, "Title");
 	}
-
+	
 	
 	
 	public void render() {
@@ -51,8 +44,7 @@ public class GameMaster extends Game {
 	
 	public void dispose() {
 		
-		entityManager.dispose();
-		
+		init.dispose();
 	}
 
 }

@@ -30,25 +30,12 @@ public class EntityManager{
 		}
 		return instance;
 	}
-	
-//	public void draw() {
-//		for(Entity i : entityList) {
-//			i.draw();
-//		}
-//	}
-//
-//	public void movement() {
-//		for(Entity i : entityList) {
-//			i.movement();
-//		}
-//		
-//	} 
+
 
 	public void update() {
 		for(Entity i : entityList) {
 			i.update();
 		}
-		
 	}	
 	
 	public void dispose() {

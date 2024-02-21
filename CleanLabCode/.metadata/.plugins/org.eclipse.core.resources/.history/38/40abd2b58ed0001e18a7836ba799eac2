@@ -1,0 +1,51 @@
+package com.mygdx.game.Collision;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mygdx.game.GameLayer.*;
+
+public class CollisionManager {
+	
+	private List<ICollision> collidables;
+	private static CollisionManager instance;
+//	private ICollision itemA;
+//	private ICollision itemB;
+
+    public CollisionManager() {
+        collidables = new ArrayList<>();
+    }
+
+    public void addCollidable(ICollision c) {
+        collidables.add(c);
+    }
+
+    public void checkCollisions() {
+    	//System.out.println("Collidable Size:" + collidables.size());
+    	ICollision itemA = null;
+        for (ICollision c: collidables) {
+        	if(c instanceof Bucket) {
+        		itemA = c;
+        	}
+                
+            for (ICollision i: collidables) {
+            	if(i instanceof Drop) {
+            		ICollision itemB = i;
+	                if (itemA.getBoundary().overlaps(itemB.getBoundary())) {
+	                    itemB.collide(itemA);
+	                }
+            	}
+            }
+            
+        }
+    }
+    
+    
+    public static CollisionManager getInstance() {
+    	if(instance == null) {
+    		instance = new CollisionManager();
+    	}
+    	return instance;
+    }
+}
+

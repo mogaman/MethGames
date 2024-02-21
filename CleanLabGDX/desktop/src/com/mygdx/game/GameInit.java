@@ -54,12 +54,15 @@ public class GameInit {
 	public void initScene(Game game) {
 		sm.addScene(new TitleScene(game), "Title");
 		sm.addScene(new GameScene(game), "Game");
+		sm.addScene(new EndScene(game), "End");
 		
 		sm.loadScene(game, "Title");
 	}
 	
 	public void dispose() {
 		em.dispose();
+		iom.dispose();
+		sm.dispose();
 		
 	}
 	

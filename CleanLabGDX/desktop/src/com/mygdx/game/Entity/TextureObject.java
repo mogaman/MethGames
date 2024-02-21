@@ -34,7 +34,7 @@ public class TextureObject extends Entity{
 	
 	@Override
 	public void update() {
-		System.out.format("In %s at %f,%f position\n", tex, getX(), getY());
+//		System.out.format("In %s at %f,%f position\n", tex, getX(), getY());
 	}
 
 

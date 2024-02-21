@@ -3,6 +3,7 @@ package com.mygdx.game.GameLayer;
 import java.util.Random;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.mygdx.game.AIControl.IAIControl;
 import com.mygdx.game.Collision.ICollision;
@@ -11,10 +12,12 @@ import com.mygdx.game.Entity.TextureObject;
 public class Drop extends TextureObject implements IAIControl, ICollision{
 	private Rectangle boundary;
 	private Random rand = new Random();
+	private Texture tex;
 
 	public Drop(String t, float x, float y, float speed) {
 		super(t, x, y, speed);
-		boundary = new Rectangle(getX(), getY(), getTex().getWidth(), getTex().getHeight());
+		tex = getTex();
+		boundary = new Rectangle(getX(), getY(), tex.getWidth(), tex.getHeight());
 	}
 
 	@Override
@@ -26,13 +29,13 @@ public class Drop extends TextureObject implements IAIControl, ICollision{
 		{
 			setY(400);
 			setX(rand.nextInt(600));
-			setSpeed(getSpeed()+2);
 		}
 		//update();
 	}
 
 	@Override
 	public Rectangle getBoundary() {
+		boundary.setPosition(getX(), getY());
 		return boundary;
 	}
 
@@ -41,10 +44,6 @@ public class Drop extends TextureObject implements IAIControl, ICollision{
 		if(collisionEntity instanceof Bucket) {
 			setY(400);
 			setX(rand.nextInt(600));
-			System.out.println("Collided\n\n\n\n\n\n");
-		}
-		else {
-			System.out.println("Collision with Drop");
 		}
 	}
 

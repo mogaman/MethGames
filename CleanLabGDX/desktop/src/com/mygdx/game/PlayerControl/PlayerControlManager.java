@@ -21,24 +21,7 @@ public class PlayerControlManager {
 		
 		em = EntityManager.getInstance();
 		iom = IOManager.getInstance();
-		
-//		List<Entity> el = em.getList();
-//		Map<String, Integer> keyMap = iom.getKeyMap();
-		
-//		for(Entity e: el) {
-//			if(e.getAIControlled() == false) {
-//				if (Gdx.input.isKeyPressed(keyMap.get("Left"))) 
-//				{
-//					float new_pos =  e.getX() - 300 * Gdx.graphics.getDeltaTime();
-//					e.setX(new_pos);
-//				}
-//				if (Gdx.input.isKeyPressed(keyMap.get("Right"))) 
-//				{
-//					float new_pos =  e.getX() + 300 * Gdx.graphics.getDeltaTime();
-//					e.setX(new_pos);
-//				}
-//			}
-//		} 
+
 	} 
 	
 	public void addPlayerControl(IPlayerControl p) {
