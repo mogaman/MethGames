@@ -1,0 +1,10 @@
+package com.mygdx.game.Entity;
+
+public class Bucket extends TextureObject implements iInput{
+
+	public Bucket(String t, float x, float y, float speed, boolean AI) {
+		super(t, x, y, speed, AI);
+		
+	}
+
+}

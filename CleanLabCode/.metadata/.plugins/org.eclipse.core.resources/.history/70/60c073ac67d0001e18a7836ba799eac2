@@ -1,0 +1,11 @@
+package com.mygdx.game.InputOutput;
+
+public class ControlsInput implements iInput{
+
+	@Override
+	public void setKey(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

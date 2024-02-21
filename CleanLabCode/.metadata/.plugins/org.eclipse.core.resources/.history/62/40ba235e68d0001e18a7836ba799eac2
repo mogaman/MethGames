@@ -1,0 +1,26 @@
+package com.mygdx.game.InputOutput;
+
+import java.util.Map;
+
+import com.badlogic.gdx.Input.Keys;
+
+public class ControlsInput implements iInput{
+	private int left;
+	private int right;
+	private int up;
+	private int down;
+	
+	public ControlsInput() {
+		this.left = Keys.LEFT;
+		this.right = Keys.RIGHT;
+		this.up = Keys.UP;
+		this.down = Keys.DOWN;
+	}
+
+	@Override
+	public void setKey(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

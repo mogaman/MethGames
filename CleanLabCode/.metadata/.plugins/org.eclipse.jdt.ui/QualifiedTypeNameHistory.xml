@@ -2,4 +2,27 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.List"/>
     <fullyQualifiedTypeName name="jdk.javadoc.internal.doclets.formats.html.markup.Entity"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.TextButton"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Label"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.utils.ChangeListener"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.Stage"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.GL20"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.utils.ScreenUtils"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.utils.viewport.ScreenViewport"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.Screen.Scene"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.InputOutput.IOManager"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.Screen.SceneManager"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.Screen.TitleScene"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.Game"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.Entity.EntityManager"/>
+    <fullyQualifiedTypeName name="com.mygdx.game.Entity.Entity"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

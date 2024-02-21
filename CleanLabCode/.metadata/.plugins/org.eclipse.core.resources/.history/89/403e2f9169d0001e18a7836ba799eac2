@@ -1,0 +1,28 @@
+package com.mygdx.game.InputOutput;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.badlogic.gdx.Input.Keys;
+
+public class ControlsInput implements iInput{
+	private Map<String, Integer> keyMap;
+	
+	public ControlsInput() {
+		keyMap = new HashMap<String, Integer>();
+		keyMap.put("Left", Keys.LEFT);
+		keyMap.put("Right", Keys.RIGHT);
+		keyMap.put("UP", Keys.UP);
+		keyMap.put("Down", Keys.DOWN);
+	}
+
+	@Override
+	public void changeKey(String control, int key) {
+		keyMap.replace(control, key);
+	}
+	
+	public HashMap<String, Integer> getKeys(){
+		return keyMap;
+	}
+
+}

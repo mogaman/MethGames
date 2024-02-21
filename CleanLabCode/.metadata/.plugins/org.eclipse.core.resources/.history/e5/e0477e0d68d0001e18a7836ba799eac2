@@ -1,0 +1,18 @@
+package com.mygdx.game.InputOutput;
+
+import java.util.Map;
+
+public class ControlsInput implements iInput{
+//	private Map<String> controls;
+	
+	public ControlsInput() {
+		
+	}
+
+	@Override
+	public void setKey(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

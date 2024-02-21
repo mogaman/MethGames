@@ -1,0 +1,5 @@
+package com.mygdx.game.InputOutput;
+
+public interface iInput {
+	protected void changeKey(String control, int key);
+}
