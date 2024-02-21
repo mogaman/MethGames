@@ -1,0 +1,14 @@
+package com.mygdx.game.GameLayer;
+
+import com.badlogic.gdx.graphics.Color;
+import com.mygdx.game.AIControl.IAIControl;
+import com.mygdx.game.Entity.Entity;
+
+public class Drop extends Entity implements IAIControl{
+
+	public Drop(float x, float y, Color colour, float speed, boolean AI) {
+		super(x, y, colour, speed, AI);
+		// TODO Auto-generated constructor stub
+	}
+
+}

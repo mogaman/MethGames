@@ -1,0 +1,5 @@
+package com.mygdx.game.GameLayer;
+
+public class Drop {
+
+}

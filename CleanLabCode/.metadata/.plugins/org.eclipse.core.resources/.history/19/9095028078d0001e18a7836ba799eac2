@@ -1,0 +1,26 @@
+package com.mygdx.game.GameLayer;
+
+import com.mygdx.game.Entity.TextureObject;
+import com.mygdx.game.InputOutput.iInput;
+import com.mygdx.game.PlayerControl.IPlayerControl;
+import com.mygdx.game.PlayerControl.PlayerControlManager;
+
+public class Bucket extends TextureObject implements IPlayerControl, iInput{
+	
+	public Bucket(String t, float x, float y, float speed, boolean AI) {
+		super(t, x, y, speed, AI);
+		pcm = PlayerControlManager.getInstance();
+	}
+
+	@Override
+	public void changeKey(String control, int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void PlayerMovement() {
+		
+	}
+
+}

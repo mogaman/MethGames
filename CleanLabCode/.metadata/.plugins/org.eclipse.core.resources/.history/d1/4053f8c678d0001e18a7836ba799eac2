@@ -1,0 +1,45 @@
+package com.mygdx.game.GameLayer;
+
+import java.util.List;
+
+import com.badlogic.gdx.Gdx;
+import com.mygdx.game.Entity.Entity;
+import com.mygdx.game.Entity.TextureObject;
+import com.mygdx.game.InputOutput.IOManager;
+import com.mygdx.game.InputOutput.iInput;
+import com.mygdx.game.PlayerControl.IPlayerControl;
+import com.mygdx.game.PlayerControl.PlayerControlManager;
+
+public class Bucket extends TextureObject implements IPlayerControl, iInput{
+	private IOManager iom;
+	private List<iInput> ioList;
+	
+	public Bucket(String t, float x, float y, float speed, boolean AI) {
+		super(t, x, y, speed, AI);
+		iom = IOManager.getInstance();
+		
+	}
+
+	@Override
+	public void changeKey(String control, int key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void PlayerMovement() {
+		if (Gdx.input.isKeyPressed(keyMap.get("Left"))) 
+		{
+			float new_pos =  e.getX() - 300 * Gdx.graphics.getDeltaTime();
+			e.setX(new_pos);
+		}
+		if (Gdx.input.isKeyPressed(keyMap.get("Right"))) 
+		{
+			float new_pos =  e.getX() + 300 * Gdx.graphics.getDeltaTime();
+			e.setX(new_pos);
+		}
+
+		
+	}
+
+}

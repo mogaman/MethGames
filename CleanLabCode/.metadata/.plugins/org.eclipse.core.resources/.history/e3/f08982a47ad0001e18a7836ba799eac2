@@ -1,0 +1,17 @@
+package com.mygdx.game.AIControl;
+
+import com.mygdx.game.Entity.EntityManager;
+
+public class AIControlManager {
+	private EntityManager em;
+	private static AIControlManager instance;
+	private List<IAIControl> aiList;
+	
+	public PlayerControlManager() {
+		aiList = new ArrayList<>();
+		
+		em = EntityManager.getInstance();
+	}
+	
+
+}

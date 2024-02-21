@@ -1,0 +1,23 @@
+package com.mygdx.game.AIControl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mygdx.game.Entity.EntityManager;
+
+public class AIControlManager {
+	private EntityManager em;
+	private static AIControlManager instance;
+	private List<IAIControl> aiList;
+	
+	public AIControlManager() {
+		aiList = new ArrayList<>();
+		
+		em = EntityManager.getInstance();
+		
+		List<Entity> el = em.getList();
+		
+	}
+	
+
+}
