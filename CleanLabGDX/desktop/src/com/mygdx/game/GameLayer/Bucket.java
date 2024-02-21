@@ -1,9 +1,11 @@
 package com.mygdx.game.GameLayer;
 
-import java.util.List;
 import java.util.Map;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
+import com.mygdx.game.Collision.ICollision;
 import com.mygdx.game.Entity.Entity;
 import com.mygdx.game.Entity.TextureObject;
 import com.mygdx.game.InputOutput.IOManager;
@@ -11,15 +13,17 @@ import com.mygdx.game.InputOutput.iInput;
 import com.mygdx.game.PlayerControl.IPlayerControl;
 import com.mygdx.game.PlayerControl.PlayerControlManager;
 
-public class Bucket extends TextureObject implements IPlayerControl{
+public class Bucket extends TextureObject implements IPlayerControl, ICollision{
 	private IOManager iom;
+	private Rectangle boundary;
 	private Map<String, Integer> keyMap;
+
 	
 	
-	public Bucket(String t, float x, float y, float speed, boolean AI) {
-		super(t, x, y, speed, AI);
+	public Bucket(String t, float x, float y, float speed) {
+		super(t, x, y, speed);
 		iom = IOManager.getInstance();
-		
+		boundary = new Rectangle(getX(), getY(), getTex().getWidth(), getTex().getHeight());
 	}
 
 
@@ -38,6 +42,17 @@ public class Bucket extends TextureObject implements IPlayerControl{
 			setX(new_pos);
 		}
 
+	}
+
+
+	@Override
+	public Rectangle getBoundary() {
+		return boundary;
+	}
+
+
+	@Override
+	public void collide(ICollision collisionEntity) {
 		
 	}
 

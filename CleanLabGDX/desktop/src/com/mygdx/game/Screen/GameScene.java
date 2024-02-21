@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.AIControl.AIControlManager;
+import com.mygdx.game.Collision.CollisionManager;
 import com.mygdx.game.Entity.EntityManager;
 import com.mygdx.game.InputOutput.IOManager;
 import com.mygdx.game.PlayerControl.PlayerControlManager;
@@ -15,6 +16,7 @@ public class GameScene extends Scene{
 	IOManager io;
 	PlayerControlManager pcm;
 	AIControlManager acm;
+	CollisionManager cm;
 	
 	public GameScene(Game game) {
 		super(game);
@@ -27,6 +29,7 @@ public class GameScene extends Scene{
 		io = IOManager.getInstance();
 		pcm = PlayerControlManager.getInstance();
 		acm = AIControlManager.getInstance();
+		cm = CollisionManager.getInstance();
 	}
 
 	@Override
@@ -37,6 +40,7 @@ public class GameScene extends Scene{
 		io.outputTexture();
 		pcm.movement();
 		acm.movement();
+		cm.checkCollisions();
 		em.update();
 	}
 

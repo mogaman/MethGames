@@ -1,0 +1,30 @@
+package com.mygdx.game.Collision;
+
+public class CollisionManager {
+	
+	public CollisionManager() {
+		private List<iCollision> collidables;
+
+	    public CollisionManager() {
+	        collidables = new ArrayList<>();
+	    }
+
+	    public void addCollidable(iCollidable collidable) {
+	        collidables.add(collidable);
+	    }
+
+	    public void checkCollisions() {
+	        for (int i = 0; i < collidables.size(); i++) {
+	            iCollidable itemA = collidables.get(i);
+	            for (int j = i + 1; j < collidables.size(); j++) {
+	                iCollidable itemB = collidables.get(j);
+	                if (itemA.getBounds().overlaps(itemB.getBounds())) {
+	                    itemA.onCollision(itemB);
+	                    itemB.onCollision(itemA);
+	                }
+	            }
+	        }
+	    }
+	}
+
+}

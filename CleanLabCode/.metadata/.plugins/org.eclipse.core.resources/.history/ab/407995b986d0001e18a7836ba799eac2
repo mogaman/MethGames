@@ -1,0 +1,47 @@
+package com.mygdx.game.Collision;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mygdx.game.PlayerControl.IPlayerControl;
+
+public class CollisionManager {
+	
+	private List<ICollision> collidables;
+	private static CollisionManager instance;
+
+    public CollisionManager() {
+        collidables = new ArrayList<>();
+    }
+
+    public void addCollidable(ICollision c) {
+        collidables.add(c);
+    }
+
+    public void checkCollisions() {
+//    	ICollision itemA;
+        for (int i = 0; i < collidables.size(); i++) {
+        	if(collidables.get(i) instanceof IPlayerControl) {
+                ICollision itemA = collidables.get(i);
+        	}
+
+            for (int j = i + 1; j < collidables.size(); j++) {
+                ICollision itemB = collidables.get(j);
+                if (itemA.getBoundary().overlaps(itemB.getBoundary())) {
+                    itemA.collide(itemB);
+                    itemB.collide(itemA);
+                }
+            }
+            
+        }
+    }
+    
+    
+    public static CollisionManager getInstance() {
+    	if(instance == null) {
+    		instance = new CollisionManager();
+    	}
+    	return instance;
+    }
+}
+

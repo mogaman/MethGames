@@ -38,7 +38,7 @@ public class PlayerControlManager {
 //					e.setX(new_pos);
 //				}
 //			}
-//		}
+//		} 
 	} 
 	
 	public void addPlayerControl(IPlayerControl p) {

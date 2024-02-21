@@ -1,0 +1,6 @@
+package com.mygdx.game.Collision;
+
+public interface ICollision {
+	public Rectangle getBoundary();
+	public boolean collide();
+}

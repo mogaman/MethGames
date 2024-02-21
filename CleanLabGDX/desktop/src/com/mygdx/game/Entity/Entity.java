@@ -10,15 +10,11 @@ public abstract class Entity{
 
 	private float x, y;
 	private float speed;
-	private Color Colour;
-	private boolean aiControlled;
 	
-	public Entity (float x, float y, Color colour, float speed, boolean AI) {
+	public Entity (float x, float y, float speed) {
 		this.x =x;
 		this.y =y;
-		this.Colour = colour;
 		this.speed = speed;
-		this.aiControlled = AI;
 	}
 	
 	//X Axis Get Set
@@ -53,28 +49,7 @@ public abstract class Entity{
 	{
 		this.speed = speed;
 	}
-	
-	//Colour Get Set
-	public Color getColour() 
-	{
-		return Colour;
-	}
 
-	public void setColour(Color colour) 
-	{
-		Colour = colour;
-	}
-	
-	//Boolean Get Set
-	public boolean getAIControlled()
-	{
-		return aiControlled;
-	}
-	
-	public void setAIControlled(boolean bool)
-	{
-		aiControlled = bool;
-	}
 
 	
 	public abstract void create();
